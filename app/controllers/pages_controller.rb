@@ -1,4 +1,4 @@
-class PageController < ApplicationController
+class PagesController < ApplicationController
   before_action :set_page, only: [:show, :update, :destroy]
 
   def show
@@ -28,7 +28,7 @@ class PageController < ApplicationController
 
   private
   def set_page
-    @page = Page.find(params[:name]) #index by name
+    @page = Page.find(name: params[:name]) #index by name
   end
   
   def page_params
