@@ -1,0 +1,15 @@
+Create new:
+rails new hacknroll-backend -d postgresql --api
+(do not use API only flag)
+
+Create the Database
+rails db:create
+
+Gems:
+bundle add rack-cors
+bundle install
+bundle update
+
+react:
+rails g model Page name pagejson
+rails g controller Page
