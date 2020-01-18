@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   
   def create
     puts "create"
-    @page = Page.new(pagejson: params[:pagejson], name: params[:newname])
+    @page = Page.new(page_json: params[:page_json], name: params[:new_name])
     if @page.save
       render json: @page
     else 
@@ -18,7 +18,7 @@ class PagesController < ApplicationController
   def update
     puts "update"
     if @page
-      if @page.update(pagejson: params[:pagejson], name: params[:newname]) #allow users to change page name?
+      if @page.update(page_json: params[:page_json], name: params[:new_name]) #allow users to change page name?
         render json: @page, status: 200
       else 
         render json: { error: @page.errors.full_messages }, status: 400
@@ -49,6 +49,6 @@ class PagesController < ApplicationController
   end
   
   def page_params
-    params.permit(:pagejson, :name, :newname)
+    params.permit(:page_json, :name, :new_name)
   end
 end
