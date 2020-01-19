@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   before_action :set_page, only: [:show, :update, :destroy, :change_name]
 
   def show
-    render json: @page
+    render json: {page: @page }
   end
   
   def create
